@@ -12,12 +12,12 @@ class StarshipController extends AbstractController
     #[Route("/starships/{id<\d+>}", name: 'app_starship_show')]
     public function show(int $id, StarshipRepository $repository): Response
     {
-        $ship = $repository->find($id);
-        if (!$ship) {
+        $ships = $repository->find($id);
+        if (!$ships) {
             throw $this->createNotFoundException('Starship not found');
         }
         return $this->render('starship/show.html.twig', [
-            'ship' => $ship,
+            'ship' => $ships,
         ]);
     }
 }

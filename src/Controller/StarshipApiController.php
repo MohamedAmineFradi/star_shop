@@ -15,17 +15,17 @@ class StarshipApiController extends AbstractController
     public function getCollection(StarshipRepository $starshipRepository ) : Response
     {
 
-        $starships = $starshipRepository->findAll();
-        return $this->json($starships);
+        $ships = $starshipRepository->findAll();
+        return $this->json($ships);
     }
     #[Route("/{id<\d+>}",methods: ["GET"])]
     public function get(int $id, StarshipRepository $starshipRepository) : Response
     {
-        $starship = $starshipRepository->find($id);
-        if (!$starship) {
+        $ships = $starshipRepository->find($id);
+        if (!$ships) {
             throw $this->createNotFoundException('Starship not found');
         }
-        return $this->json($starship);
+        return $this->json($ships);
     }
 
 }

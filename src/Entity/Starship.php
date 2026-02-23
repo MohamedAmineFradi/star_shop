@@ -8,7 +8,7 @@ class Starship
     private int $id,
     private string $name,
     private string $class,
-    private string $captin,
+    private string $captain,
     private string $status,
     ){
     }
@@ -28,9 +28,9 @@ class Starship
         return $this->class;
     }
 
-    public function getCaptin(): string
+    public function getCaptain(): string
     {
-        return $this->captin;
+        return $this->captain;
     }
 
     public function getStatus(): string
