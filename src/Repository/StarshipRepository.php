@@ -40,5 +40,9 @@ class StarshipRepository
         ),
     ];
     }
+    public function find(int $id) :?Starship
+{
+    return $this->findAll()[$id - 1] ?? null;
+}
 
 }
